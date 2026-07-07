@@ -1,0 +1,39 @@
+{
+  "input": "C:\\Projects\\alsirb\\data\\benchmarks\\alsirb_neuralchemy_tasks.full.jsonl",
+  "records": 15919,
+  "repeat": 1,
+  "processed": 15919,
+  "errors": 0,
+  "metrics": {
+    "accuracy": 0.9528864878447139,
+    "precision": 0.9770928779675135,
+    "recall": 0.9465402461166028,
+    "specificity": 0.9633638634471274,
+    "f1": 0.9615739317553028,
+    "tp": 9384,
+    "tn": 5785,
+    "fp": 220,
+    "fn": 530
+  },
+  "action_counts": {
+    "ALLOW": 6315,
+    "BLOCK": 7,
+    "QUARANTINE": 9597
+  },
+  "latency_ms": {
+    "mean": 2.480442816852027,
+    "p50": 1.8740000086836517,
+    "p95": 5.108299985295162,
+    "p99": 14.82780001242645,
+    "max": 229.47710001608357
+  },
+  "memory_mb": {
+    "current": 7.015979,
+    "peak": 12.754021
+  },
+  "elapsed_seconds": 39.661801300011575,
+  "collapse_check": {
+    "passed": true,
+    "criteria": "errors == 0 and processed > 0"
+  }
+}

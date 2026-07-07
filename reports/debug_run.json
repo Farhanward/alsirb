@@ -1,0 +1,205 @@
+{
+  "run_id": "20260704-152627-430bea6b",
+  "task": {
+    "brief": "ابن لي تطبيق مهام محلي بسيط",
+    "name": "debug_tasks",
+    "slug": "debug-tasks",
+    "language": "python",
+    "audience": "local",
+    "constraints": []
+  },
+  "workspace": "C:\\Projects\\alsirb\\workspaces\\debug-tasks-20260704-152627-430bea6b",
+  "project_dir": "C:\\Projects\\alsirb\\workspaces\\debug-tasks-20260704-152627-430bea6b\\project",
+  "status": "FAIL",
+  "packets": [
+    {
+      "role": "architect",
+      "objective": "تحويل الفكرة إلى معمارية وقالب بناء",
+      "status": "done",
+      "output_path": "architecture.md",
+      "notes": [
+        "template=task_tracker"
+      ]
+    },
+    {
+      "role": "planner",
+      "objective": "تقسيم العمل إلى خطوات قابلة للتنفيذ",
+      "status": "done",
+      "output_path": "implementation_plan.md",
+      "notes": []
+    },
+    {
+      "role": "implementer",
+      "objective": "توليد مشروع CLI واختباراته",
+      "status": "done",
+      "output_path": "workspaces\\debug-tasks-20260704-152627-430bea6b\\project",
+      "notes": [
+        "package=debug_tasks_app"
+      ]
+    },
+    {
+      "role": "reviewer",
+      "objective": "مراجعة اكتمال الملفات",
+      "status": "done",
+      "output_path": "review.md",
+      "notes": []
+    },
+    {
+      "role": "security",
+      "objective": "فحص كاشف للمشروع الناتج",
+      "status": "done",
+      "output_path": "security_report.md",
+      "notes": []
+    },
+    {
+      "role": "tester",
+      "objective": "تشغيل اختبارات الوحدة عبر بوابة تنفيذ",
+      "status": "failed",
+      "output_path": "test_report.md",
+      "notes": []
+    }
+  ],
+  "immunity": {
+    "action": "ALLOW",
+    "score": 100.0,
+    "incident_id": "ffe77d5c-f4db-42e5-bb8e-bd2e276f3405",
+    "findings": [],
+    "event": {
+      "kind": "input",
+      "content": "ابن لي تطبيق مهام محلي بسيط",
+      "agent": "alsirb-intake",
+      "tool": {},
+      "context": {
+        "project_name": "debug_tasks",
+        "language": "python",
+        "audience": "local",
+        "constraints": []
+      }
+    },
+    "quarantine_path": null,
+    "ledger": null
+  },
+  "security_scan": {
+    "root": "C:\\Projects\\alsirb\\workspaces\\debug-tasks-20260704-152627-430bea6b\\project",
+    "files": [
+      {
+        "path": "pyproject.toml",
+        "kind": "toml",
+        "size": 244,
+        "lines": 10,
+        "symbols": [],
+        "entropy": 0.0,
+        "magic": ""
+      },
+      {
+        "path": "README.md",
+        "kind": "md",
+        "size": 255,
+        "lines": 17,
+        "symbols": [],
+        "entropy": 0.0,
+        "magic": ""
+      },
+      {
+        "path": "tests/test_core.py",
+        "kind": "py",
+        "size": 682,
+        "lines": 26,
+        "symbols": [
+          "ClassDef:GeneratedProjectTests:12",
+          "FunctionDef:test_add_and_complete_task:14"
+        ],
+        "entropy": 0.0,
+        "magic": ""
+      },
+      {
+        "path": "src/debug_tasks_app/cli.py",
+        "kind": "py",
+        "size": 1689,
+        "lines": 57,
+        "symbols": [
+          "FunctionDef:_load:10",
+          "FunctionDef:_save:16",
+          "FunctionDef:main:21",
+          "FunctionDef:build_parser:40",
+          "FunctionDef:dispatch:50"
+        ],
+        "entropy": 0.0,
+        "magic": ""
+      },
+      {
+        "path": "src/debug_tasks_app/core.py",
+        "kind": "py",
+        "size": 894,
+        "lines": 31,
+        "symbols": [
+          "FunctionDef:add_task:6",
+          "FunctionDef:complete_task:21",
+          "FunctionDef:list_tasks:30"
+        ],
+        "entropy": 0.0,
+        "magic": ""
+      },
+      {
+        "path": "src/debug_tasks_app/__init__.py",
+        "kind": "py",
+        "size": 39,
+        "lines": 1,
+        "symbols": [],
+        "entropy": 0.0,
+        "magic": ""
+      }
+    ],
+    "findings": [],
+    "stats": {
+      "file_count": 6,
+      "finding_count": 0,
+      "severity_counts": {},
+      "kind_counts": {
+        "toml": 1,
+        "md": 1,
+        "py": 4
+      }
+    },
+    "passed": true
+  },
+  "test_result": {
+    "command": "python -m unittest discover -s tests -v",
+    "decision": {
+      "action": "QUARANTINE",
+      "reason": "رفضت بوابة المناعة هذا الفعل.",
+      "findings": [
+        {
+          "code": "TOOL_HIJACK_REQUEST",
+          "layer": "input",
+          "severity": "high",
+          "title": "طلب اختطاف أداة",
+          "detail": "رُصد نمط طلب اختطاف أداة في طبقة input.",
+          "evidence": "deobfuscated: run generated project unit tests after code generation. name shell"
+        },
+        {
+          "code": "LEXICAL_MODEL_RISK",
+          "layer": "input",
+          "severity": "high",
+          "title": "تصنيف خطر من النموذج المحلي",
+          "detail": "رصد النموذج اللفظي المحلي نمطاً قريباً من حقن الأوامر أو jailbreak.",
+          "evidence": "risk=0.937, threshold=0.050"
+        }
+      ]
+    },
+    "executed": false,
+    "returncode": null,
+    "stdout": "",
+    "stderr": "",
+    "elapsed_seconds": 0.0
+  },
+  "ledger": {
+    "index": 3,
+    "timestamp": "2026-07-04T15:26:27.808907+00:00",
+    "previous_hash": "2774ea6d475b0c02ec442e5d85d610d73a9ad1a47732ab29f435fcf3f6901a5e",
+    "payload_hash": "2c1e47eb3c2728510aae379cc3d3f69b5373ef2db1789b737fd0f77bbafb2988",
+    "record_hash": "176e9abe460bb0dda2564cfbb74d264054206e1aca40a4cdc3d0dc8c94e378ed",
+    "seal": "6c5f09396dcb6c1655329a6446216f7ad683ff11a95a43dd6f5597d3750dfc21"
+  },
+  "elapsed_seconds": 0.1581
+}
